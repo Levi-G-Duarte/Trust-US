@@ -61,7 +61,7 @@ app.get('/about', (req, res) => {
 });
 app.get('/about.css', (req, res) => {
     res.status(200).sendFile('css/about.css', { root: serverPath });
-})
+});
 
 
 // Start the server
