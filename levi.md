@@ -18,3 +18,13 @@ This is your coordinator Levi Duarte
 - Express/CRUD by Mr Morales, W3 Schools
 3. What is 1 resource you are using to collaborate better with your teamates?
 - Canva
+
+# Journal Entry 
+1. Do you believe you are giving your best effort to the team?
+- Yes and no, I feel I can use my strengths in other parts of the project, but I'm working in a portion that I'm unfamiliar in.
+2. What is one way you hope to improve your site by then end of the week?
+- Trying to establish a functional sign in / log in page with at least some foundation of bank features
+3. What is one technical challenge that us currently keeping you from moving forward in your project?
+- How do we link the logged user to make it function in it's data(Once logged in, how do we track what data is being used)
+4. What is 1 way you can support your team better moving forward?
+- Trying to establish a more communicated line. Trying to understand what we're accomplishing and how we can get from point A to point B.

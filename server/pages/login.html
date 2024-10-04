@@ -9,7 +9,107 @@
 <body>
     <h1>Welcome to the Login Page</h1>
     <a href="/home">Home</a>
+      <div id="formArea">
+        <div id="loginArea">
+            <h2>Login</h2>
+            <input type="text" id="loginEmail" placeholder="Email" />
+            <input type="text" id="loginPassword" placeholder="Password" />
+            <button id="loginButton">Login</button>
+            <p id="loginMessage"></p>
+            <p>Don't have an account? <button id="showSignUp">Sign Up</button></p>
+        </div>
+
+        <div id="signUpArea" style="display: none;">
+            <h2>Sign Up</h2>
+            <input type="text" id="signUpEmail" placeholder="Email" />
+            <input type="text" id="signUpPassword" placeholder="Password" />
+            <button id="signUpButton">Sign Up</button>
+            <p id="signUpMessage"></p>
+            <p>Already have an account? <button id="showLogin">Login</button></p>
+        </div>
+    </div>
+
+    <div id="welcomeArea" style="display: none;">
+        <h2>Welcome, <span id="welcomeUser"></span>!</h2>
+        <button id="logoutButton">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 <script>
+    const users = {}; // Using an object to store user credentials
+
+// Function to sign up
+function signUp() {
+    const email = document.getElementById('signUpUsername').value;
+    const password = document.getElementById('signUpPassword').value;
+    const message = document.getElementById('signUpMessage');
+
+    // Check if the email already exists
+    if (users[email]) {
+        message.textContent = 'Username already exists';
+    } else {
+        // Store the new user
+        users[email] = password;
+        message.textContent = 'Registration successful! You can now log in.';
+        document.getElementById('signUpUsername').value = '';
+        document.getElementById('signUpPassword').value = '';
+    }
+}
+
+// Function to check login credentials
+function checkCredentials(email, password) {
+    return users[email] === password;
+}
+
+// Function to log in
+function login() {
+    const email = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+    const message = document.getElementById('loginMessage');
+
+    if (checkCredentials(email, password)) {
+        // Store the email in session storage
+        sessionStorage.setItem('loggedInUser', email);
+        showWelcomeArea(email);
+    } else {
+        message.textContent = 'Invalid email or password';
+    }
+}
+
+// Function to show the welcome area
+function showWelcomeArea(email) {
+    document.getElementById('formArea').style.display = 'none';
+    document.getElementById('welcomeArea').style.display = 'block';
+    document.getElementById('welcomeUser').textContent = email;
+}
+
+// Function to log out
+function logout() {
+    sessionStorage.removeItem('loggedInUser');
+    document.getElementById('formArea').style.display = 'block';
+    document.getElementById('welcomeArea').style.display = 'none';
+}
+
+// Event listeners
+document.getElementById('loginButton').addEventListener('click', login);
+document.getElementById('signUpButton').addEventListener('click', signUp);
+document.getElementById('logoutButton').addEventListener('click', logout);
+document.getElementById('showSignUp').addEventListener('click', () => {
+    document.getElementById('loginArea').style.display = 'none';
+    document.getElementById('signUpArea').style.display = 'block';
+});
+document.getElementById('showLogin').addEventListener('click', () => {
+    document.getElementById('signUpArea').style.display = 'none';
+    document.getElementById('loginArea').style.display = 'block';
+});
+
+// Check if user is already logged in
+window.onload = function() {
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+        showWelcomeArea(loggedInUser);
+    }
+};
 </script>
 </html>
