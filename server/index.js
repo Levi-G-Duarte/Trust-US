@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const path = require('path');
 
 // Intialize Parameters and Settings
-const saltRounds = 10;
+const key = "$2b$10$0fiDpmLI1nW256wt1CpvZO";
 
 
 // Intialize the server application
@@ -16,17 +16,6 @@ const dataPath = path.join(__dirname, 'data');
 const serverPath = path.join(__dirname);
 
 // Utility functions
-function encrypt(phrase) {
-    let encryptedPhrase = ""
-    bcrypt.genSalt(saltRounds, (err, salt) => {
-        console.log(`salt: ${salt}`);
-        bcrypt.hash(phrase, salt, (err, hash) => {
-            console.log(`hash: ${hash}`)
-            encryptedPhrase = hash;
-        });
-    });
-    return encryptedPhrase;
-}
 
 // Intialize middleware
 app.use(express.static(clientPath));
@@ -63,11 +52,47 @@ app.get('/about.css', (req, res) => {
     res.status(200).sendFile('css/about.css', { root: serverPath });
 });
 
+// Example Javascript for Endpoint:
+// let req = await fetch("/login", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({ email: btoa("testuser"), password: btoa("1234") })
+// });
+// await req.text();
+app.post('/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        let user = await fs.readFile(`${dataPath}/users.json`, 'utf-8');
+        user = JSON.parse(user);
+        console.log(user, req.body);
+        const userIndex = user.findIndex(user => user.email === email && user.password === password);
+        if (userIndex != -1) {
+            let client = user[userIndex];
+            console.log(userIndex);
+            res.status(200).send(`Successful!`);
+        } else {
+            res.status(404).send('File not Found');
+        }
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send(error.message);
+    }
+});
+
+
+app.post('/signup', async (req, res) => {
+    try {
+        const { firstname, lastname, email, password } = req.body;
+        console.log(req.body);
+        res.status(200).send(`Successful! ${JSON.stringify(req.body)}`);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send(error.message);
+    }
+});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-    let password = "Hello world!"
-    console.log(password, encrypt(password));
 })
