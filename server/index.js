@@ -66,7 +66,7 @@ app.post('/login', async (req, res) => {
             let client = user[userIndex];
             if (password === client.password) {
                 client.authCode = uuidv4();
-                client.expirarion = Math.floor(Date.now() / 1000)+3600;
+                client.expiration = Math.floor(Date.now() / 1000)+3600;
                 fs.writeFile(`${dataPath}/users.json`, JSON.stringify(user, null, 2));
                 res.status(200).send(client.authCode);
             } else {
@@ -122,7 +122,7 @@ app.get('/auth/:authCode', async (req, res) => {
         const userIndex = user.findIndex(user => user.authCode === authCode);
         if (userIndex != -1) {
             let client = user[userIndex];
-            if (client.expirarion > Math.floor(Date.now()/1000)) {
+            if (client.expiration > Math.floor(Date.now()/1000)) {
                 const {firstname, lastname, email} = client;
                 res.status(200).send(JSON.stringify({firstname, lastname, email}));
             } else {
