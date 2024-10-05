@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body{
-    text-align: center
+    text-align: center;
+    color: red;
+    
+    background-color: rgb(20, 169, 255)
+}
+h1{
+    margin:auto;
+}
+
+.grid-container{
+    display:grid;
+    grid-template-rows: 2fr 2fr;
+    /* grid-template-columns: auto auto; */
+    grid-template-columns: 2fr 2fr;
+    grid-gap: 50px;
+    padding:50px;
+    height: 70vh;
+}
+.about-box{
+    border-radius: 20px;
+    font-family: sans-serif;
+    border: 1px black dashed;
+    background-color: blue;
+}
+h2{
+    font-family: "Kanit" sans-serif;
+    font-style: normal;
+    font-weight: 900;
+}
+hr{
+    border: 3px rgb(255, 255, 255) solid;
+    width: 50%;
+    border-radius: 50px;
 }
