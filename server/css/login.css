@@ -1,3 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.25s ease-in-out;
+}
 body{
-    text-align: center
+    background-image: linear-gradient(90deg, rgb(134, 215, 231), rgb(47, 81, 165));
+    text-align: center;
+}
+nav {
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    padding: 1rem;
+}
+a#nav-tags {
+    text-decoration: none;
+    color: white;
+    background-Color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a#signup-anchor {
+    font-family: "Assistant", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    float: left;
+    margin: 8px 0px 0px 0px;
+    font-size: 16px;
+}
+a#nav-tags:hover {
+    background-color:  rgb(80, 123, 134);
+}
+div#login-wrapper {
+    display: flex;
+    height: 80vh
+}
+div#login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(225, 218, 218);
+    width: 45vh;
+    height: 40vh;
+    border-radius: 15px;
+    border-color:  rgb(34, 66, 75);
+    border-style: solid;
+    border-width: 2.5px;
+    margin: auto;
+}
+input {
+    border-radius: 0.4rem;
+    border-color:  rgb(134, 215, 231);
+    padding: 0.25rem;
+    width: 65%;
+    font-size: 1rem;
+}
+button {
+    border-radius: 0.25rem;
+    border: none;
+    background-color: rgb(65, 134, 177);
+    color: white;
+    font-size: 1rem;
+    padding: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+button:hover {
+    background-color: red;
+}
+
+p#newuser {
+    font-family: "Assistant", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    float: left;
+    font-size: 16px;
+}
+
+label {
+    font-family: "Assistant", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: rgb(49, 49, 49);
+    font-size: 22px;
 }

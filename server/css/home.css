@@ -1,3 +1,73 @@
+* {
+    margin: 0;
+}
 body{
+    background-color: blue;
     text-align: center
+}
+/* div#nav-wrapper { */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* background-color: blue; */
+    /* width: 100px; */
+/* } */
+div#nav-wrapper > nav {
+    background-color: white;
+    width: 10vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+nav > a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(148, 166, 170);
+    width: 8vw;
+    border-radius: 15px;
+    font-size: 20px;
+    margin: 5px 0px 0px 10px;
+    /* text-align: center; */
+}
+a:hover {
+    background-color:rgb(90, 125, 134);
+}
+div#savings-wrapper {
+    display: flex;
+    justify-content: right;
+}
+div#savings-wrapper > div {
+    /* width: 100px; */
+    background-color: white;
+    width: 40vw;
+    height: 20vh;
+    border-radius: 25px;
+    margin: 0px 45px 0px 0px;
+}
+div#transaction-wrapper {
+    display: flex;
+    /* left: 40%; */
+    justify-content: center;
+    /* top: 50%; */
+}
+div#transaction-wrapper > div#transactions {
+    width: 70vw;
+    height: 20vh;
+    background-color: white;
+    border-radius: 25px;
+    margin: 20px 0px 0px 50px;
+    /* top: 50%; */
+}
+p {
+    font-family: "Assistant", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(49, 49, 49);
+}
+h1 {
+    color: rgb(46, 85, 95);
+    font-size: 50px;
+    text-align: center;
 }
