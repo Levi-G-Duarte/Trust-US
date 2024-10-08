@@ -10,30 +10,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <a href="/home" id="nav-tags">Home</a>
-        <a href="/home" id="nav-tags">Home</a>
-        <a href="/home" id="nav-tags">Home</a>
-    </nav>
-    <div id="login-wrapper"> 
-        <div id="login-container">
-            <!-- <label for="username-input"></label> -->
-            <!-- <input type="text"  id="username-input"></input> -->
-            <label for="email-input">Email</label>
-            <input type="text"  id="email-input"></input>
-            <label for="password-input">Password</label>
-            <input type="text" id="password-input"></input>
-            <p id="newuser">New user?</p>
-            <a href="/signup" id="signup-anchor">Sign up</a>
-            <button type="submit">Login</button>
-        </div>
-        <!-- last name, first name, email, password,  -->
-    </div>
- <p id="terms-services">By entering and clicking Continue, you agree to the Terms, E-Sign Consent, & Privacy Policy.
-    Banking services provided by TrustUS bank partners. Debit cards issued by Sutton Bank. Brokerage services by 
-    TrustUS Investing LLC, member FINRA, subsidiary of Block, Inc formerly known as Square, Inc. Bitcoin services 
-    by Block, Inc. TrustUS Investing does not trade bitcoin and Block, Inc. is not a member of FINRA or SIPC. Tax 
-    filing services by TrustUS Taxes, Inc. Disclosures</p>
+      <div id="login-wrapper">
+        <h1>Login</h1>
+        <form id="login-form">
+            <div>
+                <label for="email-input">Email</label>
+            </div>
+            <div> 
+                <input required type="email" name="email" id="email-input" placeholder="Email">
+            </div>
+            <div>
+                <label for="password-input">Password</label>
+            </div>
+            <div> 
+                <input required type="password" name="password" id="password-input" placeholder="Password">
+            </div>
+            <button type="sumbit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/signup">Sign up</a></p>
+    </div> 
 </body>
 <script>
 </script>

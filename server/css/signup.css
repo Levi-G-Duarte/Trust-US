@@ -1,23 +1,22 @@
 * {
     margin: 0;
     padding: 0;
-    transition: all 0.25s ease-in-out;
 }
 html {
     font-family: "Catamaran", sans-serif;
     font-size: 1rem;
 }
-body{
+body {
     background-color: #C8D0B4;
 }
-div#login-wrapper {
+div#signup-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     background-color: #C8D0B4;
-    height: 60vh;
+    height: 80vh;
     border-radius: 0.25rem;
 }
 h1 {
