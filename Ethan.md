@@ -35,3 +35,14 @@
 
 4. What is 1 way you can support your team better moving forward?
 > I might have to jump in and start helping in the front end after I finish the backend
+
+# Journal log 10/7/24
+
+1. What is one idea/topic that you have had to revisit from last year while building your project?
+> Regex is one of those things I took a look at from last year
+
+2. What is one real world reference web site that you have used to inspire your work on this project? What is it about that appeals to you?
+> Chase bank because of how simple and clean it UI feels
+
+3. Have you considered how users with sight disabilities might view your site? Have you take into taken account?
+> I haven't
