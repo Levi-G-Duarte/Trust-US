@@ -15,17 +15,19 @@ body{
     overflow: hidden;
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
     height: 9vh;
     gap: 0.5rem;
 }
 nav > a {
     text-decoration: none;
     color: white;
-    background-Color: #636F57;
+    /* background-Color: #636F57; */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 9vh;
+    height: 4vh;
 }
 a:hover {
     background-color:  #818C71;
@@ -43,7 +45,6 @@ div#accounts-wrapper > div {
     background-color: #BBC4A6;
     width: 35vw;
     height: 20vh;
-    /* gap: 2rem; */
     border-radius: 0.5rem;
 }
 div#transaction-wrapper {
@@ -77,8 +78,6 @@ h1 {
     justify-content: center;
     width: 4.5vw;
     height: 4vh;
-    /* position: absolute; */
-    /* bottom: 0; */
 }
 div#savings-withdraw-popup {
     background: rgba(0, 0, 0, 0.6);

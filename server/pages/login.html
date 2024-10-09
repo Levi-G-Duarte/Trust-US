@@ -14,22 +14,98 @@
         <h1>Login</h1>
         <form id="login-form">
             <div>
-                <label for="email-input">Email</label>
+                <label for="signup-email-input">Email</label>
             </div>
             <div> 
-                <input required type="email" name="email" id="email-input" placeholder="Email">
+                <input required type="email" name="email" id="login-email-input" placeholder="Email">
             </div>
             <div>
-                <label for="password-input">Password</label>
+                <label for="signup-password-input">Password</label>
             </div>
             <div> 
-                <input required type="password" name="password" id="password-input" placeholder="Password">
+                <input required type="password" name="password" id="login-password-input" placeholder="Password">
             </div>
-            <button type="sumbit">Login</button>
+            <div class="button-wrapper">
+                <button type="sumbit">Login</button>
+            </div>
         </form>
-        <p>Don't have an account? <a href="/signup">Sign up</a></p>
-    </div> 
+        <p>Don't have an account? <a id="signup-anchor">Sign up</a></p>
+    </div>
+    <div id="signup-wrapper">
+        <h1>Signup</h1>
+        <form id="signup-form">
+            <div>
+                <label for="firstname-input">First Name</label>
+            </div>
+            <div> 
+                <input required type="text" name="firstname" id="firstname-input" placeholder="First Name">
+            </div>
+            <div>
+                <label for="lastname-input">Last Name</label>
+            </div>
+            <div> 
+                <input required type="text" name="lastname" id="lastname-input" placeholder="Last Name">
+            </div>
+            <div>
+                <label for="signup-email-input">Email</label>
+            </div>
+            <div> 
+                <input required type="email" name="email" id="signup-email-input" placeholder="Email">
+            </div>
+            <div>
+                <label for="signup-password-input">Password</label>
+            </div>
+            <div> 
+                <input required type="password" name="password" id="signup-password-input" pattern="^(?=.*[A-Z])(?=.*[\W_]).{8,}$"title="Password must be at least 8 characters long, contain at least one uppercase letter, and one special character." placeholder="Password">
+            </div>
+            <div>
+                <label for="repeat-password-input">Repeat Password</label>
+            </div>
+            <div> 
+                <input required type="password" name="repeat-password" id="repeat-password-input" placeholder="Repeat Password">
+            </div>
+            <div class="button-wrapper">
+            <button type="sumbit">Create Account</button>
+            </div>
+        </form>
+        <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
 </body>
 <script>
+    document.getElementById("signup-anchor").addEventListener("click", function(){
+        document.querySelector("#signup-wrapper").style.display = "flex";
+        document.querySelector("#login-wrapper").style.display = "none";
+    })
+
+    const login_form = document.querySelector("#login-form");
+    login_form.addEventListener("submit", async (event) =>{
+        event.preventDefault();
+
+        let data = {email: "example@example.com", password: "admin"};
+        Object.keys(data).forEach(item => {data[item] = btoa(data[item])});
+        let req = await fetch("/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+        let result = await req.text();
+        if (result != null) {
+            sessionStorage.setItem('authCode', result);
+            window.location.href = "/home";
+        }
+    })
+
+    const signup_form = document.querySelector("#signup-form");
+    signup_form.addEventListener("submit", async (event) =>{
+
+    let data = {firstname: "first", lastname: "last", email: "example@example.com", password: "admin"};
+    Object.keys(data).forEach(item => {data[item] = btoa(data[item])});
+    let req = await fetch("/signup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+});
+await req.text();
+    })
 </script>
 </html>
