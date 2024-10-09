@@ -36,6 +36,7 @@ div#accounts-wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    box-sizing:border-box;
     gap: 1rem;
     padding: 1rem 0rem 0rem 1rem;
     float: left;
@@ -46,6 +47,33 @@ div#accounts-wrapper > div {
     width: 35vw;
     height: 20vh;
     border-radius: 0.5rem;
+    flex-wrap: wrap;
+    /* box-sizing: border-box; */
+}
+div#accounts-wrapper * {
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+div#accounts-wrapper > div > div {
+    /* position: absolute; */
+    /* bottom: 0; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    /* padding: 0.5rem 0 0.5rem 2.5rem; */
+    /* padding-left: 0.5rem; */
+    /* gap: 2rem; */
+    /* flex-direction: row-reverse; */
+}
+div button {
+    background-color: #818C71;
+    border-radius: 0.25rem;
+    transition: 150ms ease;
+    border: none;
+}
+div button:hover {
+    background-color: #636F57;
+
 }
 div#transaction-wrapper {
     display: flex;
@@ -100,28 +128,36 @@ div#savings-deposit-popup {
     align-items: center;
 }
 div#savings-content {
-    height: 40vh;
-    width: 40vw;
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 35vh;
+    width: 30vw;
+    background-color: #ecf1df;
     border-radius: 0.5rem;
+    position: relative;
 }
 label#savings-withdraw-exit {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0.1rem;
+    cursor: pointer;
 }
 label#savings-deposit-exit {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0.1rem;
+    cursor: pointer;
 }
-div#checkings-withdraw-popup {
+div#checkings-withdraw-popup  {
     background: rgba(0, 0, 0, 0.6);
     width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;
     display: none;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
@@ -136,18 +172,39 @@ div#checkings-deposit-popup {
     align-items: center;
 }
 div#checkings-content {
-    height: 40vh;
-    width: 40vw;
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 35vh;
+    width: 30vw;
+    background-color: #ecf1df;
     border-radius: 0.5rem;
+    position: relative;
 }
 label#checkings-withdraw-exit {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0.1rem;
+    cursor: pointer;
 }
 label#checkings-deposit-exit {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0.1rem;
+    cursor: pointer;
 }
+
+input {
+    width: 15vw;
+    height: 5vh;
+    border-radius: 0.3rem;
+    border: none;
+    border: 0.14rem solid #BBC4A6;
+    background-color: #BBC4A6;
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+/* input::placeholder {
+    font-size: 3rem;
+} */

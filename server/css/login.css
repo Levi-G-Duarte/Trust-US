@@ -17,7 +17,7 @@ div#login-wrapper {
     justify-content: center;
     box-sizing: border-box;
     /* background-color: #C8D0B4; */
-    height: 60vh;
+    height: 100vh;
     border-radius: 0.25rem;
 }
 h1 {
@@ -80,8 +80,8 @@ div#signup-wrapper {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    background-color: #C8D0B4;
-    height: 80vh;
+    /* background-color: #C8D0B4; */
+    height: 100vh;
     border-radius: 0.25rem;
 }
 div#signup-wrapper {
@@ -90,4 +90,5 @@ div#signup-wrapper {
 a#signup-anchor {
     color: blue;
     text-decoration: underline;
+    cursor: pointer;
 }
