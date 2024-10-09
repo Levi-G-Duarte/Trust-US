@@ -105,7 +105,6 @@ ul {
     border-right: 2px solid black;
     animation: blinking 1s steps(1, end) infinite, typing 1.5s steps(40, end);
     overflow: hidden;
-    animation-delay: ;
     white-space: nowrap;
 }
 @keyframes horizontal-shaking {
