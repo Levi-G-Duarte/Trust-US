@@ -121,8 +121,8 @@ app.get('/auth/:authCode', async (req, res) => {
         if (userIndex != -1) {
             let client = user[userIndex];
             if (client.expiration > Math.floor(Date.now()/1000)) {
-                const {firstname, lastname, email} = client;
-                res.status(200).send(JSON.stringify({firstname, lastname, email}));
+                const {firstname, lastname, email, history} = client;
+                res.status(200).send(JSON.stringify({firstname, lastname, email, history}));
             } else {
                 res.status(403).send("Forbidden, Authcode has expired");
             }
