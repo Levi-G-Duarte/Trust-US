@@ -30,8 +30,8 @@
                     if (index >= text.length) {
                         clearInterval(loop);
                     }
-                }, 500);
-                setTimeout(()=>{title.classList.remove("typing")},500*text.length);
+                }, 1000/text.length);
+                setTimeout(()=>{title.classList.remove("typing")}, 1000);
             </script>
         </div>
     </div>
