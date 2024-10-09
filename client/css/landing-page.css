@@ -1,4 +1,3 @@
-
 body{
     background-color: #f1f1f1;
     text-align: center;
@@ -11,7 +10,6 @@ h1{
     text-align: left;
     justify-content: left;
     font-family: sans-serif;
-    text-shadow: 2px;
 }
 
 nav {
@@ -38,9 +36,6 @@ div#nav {
     color: #F1F1F1;
     background: linear-gradient(90deg, rgb(209, 7, 209),blue)
 
-}
-#login-button:hover {
-    animation:horizontal-shaking 0.65s ease-in-out 1;
 }
 
 div#parent-container {
@@ -101,25 +96,3 @@ div#footer {
 ul {
     line-height: 2;
 }
-.typing {
-    border-right: 2px solid black;
-    animation: blinking 1s steps(1, end) infinite, typing 1.5s steps(40, end);
-    overflow: hidden;
-    white-space: nowrap;
-}
-@keyframes horizontal-shaking {
-    0% { transform: translateX(0) }
-    25% { transform: translateX(5px) }
-    50% { transform: translateX(-5px) }
-    75% { transform: translateX(5px) }
-    100% { transform: translateX(0) }
-   }
-   @keyframes blinking {
-    0% {border-color: transparent}
-    50% {border-color: black}
-    100% {border-color: transparent}
-   }
-   @keyframes typing {
-    0% {width: 0}
-    100% {width: 100%;}
-   }
