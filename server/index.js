@@ -98,9 +98,7 @@ app.post('/signup', async (req, res) => {
         user = JSON.parse(user);
         const userIndex = user.findIndex(user => user.email === email);
         if (userIndex === -1) {
-            client.balance = 0;
-            client.FICO = 0;
-            
+            client.history = [];
             console.log(client);
             user.push(client);
             fs.writeFile(`${dataPath}/users.json`, JSON.stringify(user, null, 2));
@@ -130,6 +128,43 @@ app.get('/auth/:authCode', async (req, res) => {
             }
         } else {
             res.status(400).send("Bad Request");
+        }
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send(error.message);
+    }
+})
+
+// Example Javascript for Endpoint
+// let request = await fetch(`/auth/${sessionStorage.authCode}`, {
+//     method: "PUT",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({amount: 10})
+// });
+// let amount = await request.json();
+app.put('/auth/:authCode', async (req, res) => {
+    try {
+        const {authCode} = req.params;
+        const {amount} = req.body;
+        if (amount != null) {
+            console.log(authCode, amount);
+            let user = await fs.readFile(`${dataPath}/users.json`, 'utf-8');
+            user = JSON.parse(user);
+            const userIndex = user.findIndex(user => user.authCode === authCode);
+            if (userIndex != -1) {
+                let client = user[userIndex];
+                if (client.expiration > Math.floor(Date.now()/1000)) {
+                    client.history.push(amount);
+                    fs.writeFile(`${dataPath}/users.json`, JSON.stringify(user, null, 2));
+                    res.status(200).send(JSON.stringify(client.history));
+                } else {
+                    res.status(403).send("Forbidden, Authcode has expired");
+                }
+            } else {
+                res.status(400).send("Bad Request");
+            }
+        } else {
+            res.status(422).send("Missing body parameter");
         }
     } catch (error) {
         console.error(error.message);
