@@ -10,187 +10,180 @@
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-          <nav>
-            <a id="logout-button">Log out</a>
-            <label>
-                <svg xmlns="http://www.w3.org/2000/svg" height="9vh" viewBox="0 -960 960 960" width="2vw" fill="white"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg>
-            </label>
-            <!-- <a href="/about">About</a> -->
-            <!-- <a href="/about">About</a> -->
-        </nav>
-    <div id="accounts-wrapper">
-        <h2>Bank Accounts</h2>
-        <div id="savings-wrapper">
-            <p>Savings</p>
-            <h1>$ <span id="savings-deposit-span">00</span></h1>
-            <button type="button" id="savings-withdraw">Withdraw</button>
-            <button type="button" id="savings-deposit">Deposit</button>
-        </div>
-        <div>
-            <p>Checking</p>
-            <h1>$ <span id="savings-withdraw-span">00</span></h1>
-            <button type="button" id="checkings-withdraw">Withdraw</button>
-            <button type="button" id="checkings-deposit">Deposit</button>
-        </div>
+    <nav>
+        <a id="logout-button">Log out</a>
+        <label>
+            <svg xmlns="http://www.w3.org/2000/svg" height="9vh" viewBox="0 -960 960 960" width="2vw" fill="white"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg>
+        </label>
+        <!-- <a href="/about">About</a> -->
+        <!-- <a href="/about">About</a> -->
+    </nav>
+<div id="accounts-wrapper">
+    <h2>Bank Accounts</h2>
+    <div id="savings-wrapper">
+        <p>Savings</p>
+        <h1>$ <span id="savings-deposit-span">00</span></h1>
+        <button type="button" id="savings-withdraw">Withdraw</button>
+        <button type="button" id="savings-deposit">Deposit</button>
     </div>
-    <div id="transaction-wrapper">
-        <h2>Transactions</h2>
-        <div id="transactions">
-        </div>
+    <div>
+        <p>Checking</p>
+        <h1>$ <span id="checkings-deposit-span">00</span></h1>
+        <button type="button" id="checkings-withdraw">Withdraw</button>
+        <button type="button" id="checkings-deposit">Deposit</button>
     </div>
+</div>
+<div id="transaction-wrapper">
+    <h2>Transactions</h2>
+    <div id="transactions">
+    </div>
+</div>
 
-    <div id="savings-withdraw-popup">
-        <div id="savings-content">
-            <label id="savings-withdraw-exit">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-            </label>
-            <input type="text" id="savings-withdraw-amount" placeholder="Withdraw">
-            <button type="sumbit" id="savings-withdraw-button">Withdraw</button>
-        </div>
+<div id="savings-withdraw-popup">
+    <div id="savings-content">
+        <label id="savings-withdraw-exit">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+        </label>
+        <input type="text" id="savings-withdraw-amount" placeholder="Withdraw">
+        <button type="sumbit" id="savings-withdraw-button">Withdraw</button>
     </div>
-    <div id="savings-deposit-popup">
-        <div id="savings-content">
-            <label id="savings-deposit-exit">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-            </label>
-            <input type="text" id="savings-deposit-amount" placeholder="Deposit">
-            <button type="sumbit" id="savings-deposit-button">Deposit</button>
-        </div>
+</div>
+<div id="savings-deposit-popup">
+    <div id="savings-content">
+        <label id="savings-deposit-exit">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+        </label>
+        <input type="text" id="savings-deposit-amount" placeholder="Deposit">
+        <button type="sumbit" id="savings-deposit-button">Deposit</button>
     </div>
-    <div id="checkings-withdraw-popup">
-        <div id="checkings-content">
-            <label id="checkings-withdraw-exit">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-            </label>
-            <input type="text" placeholder="Withdraw">
-            <button type="submit">Withdraw</button>
-        </div>
+</div>
+<div id="checkings-withdraw-popup">
+    <div id="checkings-content">
+        <label id="checkings-withdraw-exit">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+        </label>
+        <input type="text" id="checkings-withdraw-amount" placeholder="Withdraw">
+        <button type="submit" id="checkings-withdraw-button">Withdraw</button>
     </div>
-    <div id="checkings-deposit-popup">
-        <div id="checkings-content">
-            <label id="checkings-deposit-exit">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-            </label>
-            <input type="text" placeholder="Deposit">
-            <button type="submit">Deposit</button>
-        </div>
+</div>
+<div id="checkings-deposit-popup">
+    <div id="checkings-content">
+        <label id="checkings-deposit-exit">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+        </label>
+        <input type="text" id="checkings-deposit-amount" placeholder="Deposit">
+        <button type="submit" id="checkings-deposit-button">Deposit</button>
     </div>
+</div>
 <script>
-    if (sessionStorage.getItem("authCode") == null) {
-        window.location.href = "/login";
+// if (sessionStorage.getItem("authCode") == null) {
+//     window.location.href = "/login";
+// }
+
+document.getElementById("logout-button").addEventListener("click", function(){
+    sessionStorage.clear();
+    window.location.reload();
+})
+
+// Savings Deposit and Withdraw
+document.getElementById("savings-withdraw").addEventListener("click", function(){
+    document.querySelector("#savings-withdraw-popup").style.display = "flex";
+})
+document.getElementById("savings-deposit").addEventListener("click", function(){
+    document.querySelector("#savings-deposit-popup").style.display = "flex";
+})
+// Checking Deposit and Withdraw
+document.getElementById("checkings-withdraw").addEventListener("click", function(){
+    document.querySelector("#checkings-withdraw-popup").style.display = "flex";
+})
+document.getElementById("checkings-deposit").addEventListener("click", function(){
+    document.querySelector("#checkings-deposit-popup").style.display = "flex";
+})
+// Exit for Savings and Checkings Popup
+document.querySelector("#savings-withdraw-exit").addEventListener("click", function(){
+    document.querySelector("#savings-withdraw-popup").style.display = "none";
+})
+document.querySelector("#savings-deposit-exit").addEventListener("click", function(){
+    document.querySelector("#savings-deposit-popup").style.display = "none";
+})
+document.querySelector("#checkings-withdraw-exit").addEventListener("click", function(){
+    document.querySelector("#checkings-withdraw-popup").style.display = "none";
+})
+document.querySelector("#checkings-deposit-exit").addEventListener("click", function(){
+    document.querySelector("#checkings-deposit-popup").style.display = "none";
+})
+
+    // document.querySelectorAll("label[id$'-exit']").forEach(label => {
+    //     label.addEventListener("click", function(){            
+            // const popupId = this.id.replace('-exit', '-popup')
+    //         // document.querySelectorAll("div[id$'-popup']").style.display = "none;"
+    //     })
+    // })
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+// Starting Balance
+let savingsBalance = 2000;
+let checkingBalance = 2000;
+// Update The Balance Display / Update Function
+function updateBalances() {
+    document.getElementById("savings-deposit-span").textContent = savingsBalance.toFixed(2);
+    document.getElementById("checkings-deposit-span").textContent = checkingBalance.toFixed(2);
+}
+// Log Transactions Function
+function logTransaction(type, amount, account){
+    const transactionDiv = document.getElementById("transactions");
+    const transactionEntry = document.createElement("div");
+    transactionEntry.textContent = `${type} of $${amount.toFixed(2)} from ${account}`;
+    transactionDiv.appendChild(transactionEntry);
+}
+updateBalances(); // Initial display update
+// Deposit Savings
+document.getElementById("savings-deposit-button").addEventListener("click", function() {
+    const amount = parseFloat(document.getElementById("savings-deposit-amount").value);
+    if (!isNaN(amount) && amount > 0) {
+        savingsBalance += amount;
+        logTransaction("Deposit", amount, "Savings Account");
+        updateBalances();
     }
-
-    document.getElementById("logout-button").addEventListener("click", function(){
-        sessionStorage.clear();
-        window.location.reload();
-    })
-
-    // Savings Deposit and Withdraw
-    document.getElementById("savings-withdraw").addEventListener("click", function(){
-        document.querySelector("#savings-withdraw-popup").style.display = "flex";
-    })
-    document.getElementById("savings-deposit").addEventListener("click", function(){
-        document.querySelector("#savings-deposit-popup").style.display = "flex";
-    })
-    // Checking Deposit and Withdraw
-    document.getElementById("checkings-withdraw").addEventListener("click", function(){
-        document.querySelector("#checkings-withdraw-popup").style.display = "flex";
-    })
-    document.getElementById("checkings-deposit").addEventListener("click", function(){
-        document.querySelector("#checkings-deposit-popup").style.display = "flex";
-    })
-    // Exit for Savings and Checkings Popup
-    document.querySelector("#savings-withdraw-exit").addEventListener("click", function(){
-        document.querySelector("#savings-withdraw-popup").style.display = "none";
-    })
-    document.querySelector("#savings-deposit-exit").addEventListener("click", function(){
-        document.querySelector("#savings-deposit-popup").style.display = "none";
-    })
-    document.querySelector("#checkings-withdraw-exit").addEventListener("click", function(){
-        document.querySelector("#checkings-withdraw-popup").style.display = "none";
-    })
-    document.querySelector("#checkings-deposit-exit").addEventListener("click", function(){
-        document.querySelector("#checkings-deposit-popup").style.display = "none";
-    })
-
-        // document.querySelectorAll("label[id$'-exit']").forEach(label => {
-        //     label.addEventListener("click", function(){            
-                // const popupId = this.id.replace('-exit', '-popup')
-        //         // document.querySelectorAll("div[id$'-popup']").style.display = "none;"
-        //     })
-        // })
-
-
-
-    document.addEventListener("DOMContentLoaded", function() {
-    // Initial balances
-    let savingsBalance = 2000;
-    let checkingBalance = 2000;
-
-    // Update balance display function
-    function updateBalances() {
-        document.getElementById("savings-deposit-span").textContent = savingsBalance.toFixed(2);
-        document.getElementById("savings-withdraw-span").textContent = checkingBalance.toFixed(2);
-    }
-
-    updateBalances(); // Initial display update
-
-    // Savings deposit
-    document.getElementById("savings-deposit").addEventListener("click", function() {
-    });
-
-    document.getElementById("savings-deposit-button").addEventListener("click", function() {
-        const amount = parseFloat(document.getElementById("savings-deposit-amount").value);
-        if (!isNaN(amount) && amount > 0) {
-            savingsBalance += amount;
-            updateBalances();
-        }
-        document.getElementById("savings-deposit-amount").value = ""; // Clear input
-    });
-
-    // Savings withdrawal
-    document.getElementById("savings-withdraw").addEventListener("click", function() {
-    });
-
-    document.getElementById("savings-withdraw-button").addEventListener("click", function() {
-        const amount = parseFloat(document.getElementById("savings-withdraw-amount").value);
-        if (!isNaN(amount) && amount > 0) {
-            if (amount <= savingsBalance) {
-                savingsBalance -= amount;
-                updateBalances();
-            } 
-        } 
-        document.getElementById("savings-withdraw-amount").value = ""; // Clear input
-    });
-
-    // Checking deposit
-    document.getElementById("checkings-deposit").addEventListener("click", function() {
-    });
-
-    document.getElementById("checkings-deposit-button").addEventListener("click", function() {
-        const amount = parseFloat(document.querySelector("#checkings-content input[placeholder='Deposit']").value);
-        if (!isNaN(amount) && amount > 0) {
-            checkingBalance += amount;
+    document.getElementById("savings-deposit-amount").value = ""; // Clear input
+});
+// Savings withdrawal
+document.getElementById("savings-withdraw-button").addEventListener("click", function() {
+    const amount = parseFloat(document.getElementById("savings-withdraw-amount").value);
+    if (!isNaN(amount) && amount > 0) {
+        if (amount <= savingsBalance) {
+            savingsBalance -= amount;
+            logTransaction("Withdraw", amount, "Savings Account");
             updateBalances();
         } 
-        document.querySelector("#checkings-content input[placeholder='Deposit']").value = ""; // Clear input
-    });
-
-    // Checking withdrawal
-    document.getElementById("checkings-withdraw").addEventListener("click", function() {
-    });
-
-    document.querySelector("#checkings-content button[type='submit']").addEventListener("click", function() {
-        const amount = parseFloat(document.querySelector("#checkings-content input[placeholder='Withdraw']").value);
-        if (!isNaN(amount) && amount > 0) {
-            if (amount <= checkingBalance) {
-                checkingBalance -= amount;
-                updateBalances();
-            } 
-        }
-        document.querySelector("#checkings-content input[placeholder='Withdraw']").value = ""; // Clear input
-        }); 
-    });
+    } 
+    document.getElementById("savings-withdraw-amount").value = ""; // Clear input
+});
+// Checking deposit
+document.getElementById("checkings-deposit-button").addEventListener("click", function() {
+    const amount = parseFloat(document.getElementById("checkings-deposit-amount").value);
+    if (!isNaN(amount) && amount > 0) {
+        checkingBalance += amount;
+        logTransaction("Deposit", amount, "Checking Account");
+        updateBalances();
+    } 
+    document.getElementById("checkings-deposit-amount").value = "";
+});
+// Checking withdrawal
+document.getElementById("checkings-withdraw-button").addEventListener("click", function() {
+    const amount = parseFloat(document.getElementById("checkings-withdraw-amount").value);
+    if (!isNaN(amount) && amount > 0) {
+        if (amount <= checkingBalance) {
+            checkingBalance -= amount;
+            logTransaction("Withdraw", amount, "Checking Account");
+            updateBalances();
+        } 
+    }
+    document.getElementById("checkings-withdraw-amount").value = ""; // Clear input
+    }); 
+});
 </script>
 </body>
 </html>
