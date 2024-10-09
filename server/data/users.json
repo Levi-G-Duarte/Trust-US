@@ -4,9 +4,16 @@
     "lastname": "bGFzdA==",
     "email": "ZXhhbXBsZUBleGFtcGxlLmNvbQ==",
     "password": "YWRtaW4=",
-    "balance": 0,
-    "FICO": 0,
-    "authCode": "e8b07f7d-d3bb-48c1-ad15-456ea84ea8d8",
-    "expiration": 1728436188
+    "history": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "authCode": "df623b5e-6029-4045-8b5a-815ece432d64",
+    "expiration": 1728462811
   }
 ]

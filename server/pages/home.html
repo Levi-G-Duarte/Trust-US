@@ -79,6 +79,9 @@
 if (sessionStorage.getItem("authCode") == null) {
     window.location.href = "/login";
 }
+if (sessionStorage.getItem("authCode") == null) {
+    window.location.href = "/login";
+}
 
 document.getElementById("logout-button").addEventListener("click", function(){
     sessionStorage.clear();
