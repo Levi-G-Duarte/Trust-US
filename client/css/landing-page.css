@@ -2,25 +2,22 @@ body{
     background-color: #f1f1f1;
     text-align: center;
     background-repeat: no-repeat;
-    height: 200vh;
-    overflow: hidden;
     font-family: Cash Sans, Helvetica Neue, helvetica, sans-serif;     
     margin:0;
 }
+
 h1{
     text-align: left;
     justify-content: left;
     font-family: sans-serif;
 }
+
 nav {
     position: fixed;
-    width:100vw;
-    /* background-color: white; */
+    width:100%;
 }
+
 div#nav {
-  /* background-color: white; */
-    position:relative;
-    width: 100%;
     display:flex;
     justify-content: right;
     justify-items: right;
@@ -36,7 +33,6 @@ div#nav {
     cursor: pointer;
     margin-right: 1vh;
     margin-top: 1vh;
-    /* background-color: rgba(69,42,0,0.25); */
     color: #F1F1F1;
     background: linear-gradient(90deg, rgb(209, 7, 209),blue)
 
@@ -44,12 +40,12 @@ div#nav {
 
 div#parent-container {
     display:flex;
-    width:100vw;
     height: 50vh;
     justify-content: center;
     align-items: end;
     padding-bottom: 5%;
 }
+
 div#box1 {
     display:flex;
     width: 30vw;
@@ -58,6 +54,7 @@ div#box1 {
     align-items: center;
     
 }
+
 h1.title {
     font-size: 10em;
     background: linear-gradient(rgb(209, 7, 209), BLUE);
@@ -65,17 +62,18 @@ h1.title {
             background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 div#body-content-container {
     display:flex;
-    width: 100vw;
-    height: 100vh;
     background-color: black;
     justify-content: space-evenly;
 }
+
 div.body-content1 {
     color: white;
     width:40vw;
 }
+
 .bodyh1 {
     display: flex;
     justify-content: center;
@@ -84,11 +82,17 @@ div.body-content1 {
             background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 div#footer {
     display: flex;
     justify-content: center;
-    width: 100vw;
-    height: 400px;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
     background-color: black;
     color: white;
+}
+
+ul {
+    line-height: 2;
 }
