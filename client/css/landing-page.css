@@ -4,6 +4,7 @@ body{
     background-repeat: no-repeat;
     font-family: Cash Sans, Helvetica Neue, helvetica, sans-serif;     
     margin:0;
+    text-shadow: 2px;
 }
 
 h1{
@@ -95,4 +96,16 @@ div#footer {
 
 ul {
     line-height: 2;
+}
+
+.typing {
+    border-right: 2px solid black;
+    animation: blinking 1s steps(1, end) infinite, typing 1.5s steps(40, end);
+    white-space: nowrap;
+}
+
+@keyframes blinking {
+    0% {border-color: transparent}
+    50% {border-color: black}
+    100% {border-color: transparent}
 }
