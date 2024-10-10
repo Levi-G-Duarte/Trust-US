@@ -68,7 +68,7 @@ app.post('/login', async (req, res) => {
             if (password === client.password) {
                 client.authCode = uuidv4();
                 client.expiration = Math.floor(Date.now() / 1000)+3600;
-                fs.writeFile(`${dataPath}/users.json`, JSON.stringify(user, null, 2));
+                await fs.writeFile(`${dataPath}/users.json`, JSON.stringify(user, null, 2));
                 res.status(200).send(client.authCode);
             } else {
                 res.status(409).send(`Incorrect password`);
@@ -103,7 +103,7 @@ app.post('/signup', async (req, res) => {
             client.checkings = [];
             console.log(client);
             user.push(client);
-            fs.writeFile(`${dataPath}/users.json`, JSON.stringify(user, null, 2));
+            await fs.writeFile(`${dataPath}/users.json`, JSON.stringify(user, null, 2));
             res.status(200).send(`Successful!`);
         } else {
             res.status(401).send(`User already exists`);
@@ -158,8 +158,8 @@ app.put('/auth/:authCode', async (req, res) => {
                 if (client.expiration > Math.floor(Date.now()/1000)) {
                     let balance = client[isSavings?"savings":"checkings"];
                     balance.push(parseInt(amount));
-                    fs.writeFile(`${dataPath}/users.json`, JSON.stringify(user, null, 2));
-                    res.status(200).send(JSON.stringify({savings: client.savings, checkings: client.checkings}));
+                    await fs.writeFile(`${dataPath}/users.json`, JSON.stringify(user, null, 2));
+                    res.status(200).send("Succesful!");
                 } else {
                     res.status(403).send("Forbidden, Authcode has expired");
                 }
