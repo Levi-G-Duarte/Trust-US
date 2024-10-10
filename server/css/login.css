@@ -11,13 +11,11 @@ body{
     background-color: #f1f1f1;
 }
 div#login-wrapper {
-    /* background-color: white; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    /* background-color: #C8D0B4; */
     height: 100vh;
     border-radius: 0.25rem;
 }
@@ -26,10 +24,13 @@ h1 {
 }
 p {
     margin-top: 0.5rem;
+    z-index: 10;
+
 }
 form {
     display: flex;
     flex-direction: column;
+    z-index: 10;
 }
 form label {
     display: flex;
@@ -40,20 +41,22 @@ form label {
 form button {
     border: none;
     margin-top: 1rem;
-    width: 8vw;
+    width: 40%;
     height: 5vh;
-    background-color: #818C71;
+    background-color: #141313;
+    color: white;
     border-radius: 0.25rem;
     transition: 150ms ease;
     /* margin-left: 7.2rem; */
 }
 form button:hover {
-    background-color: #636F57;
+    background-color: #494848;
 }
 div.button-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 form input {
     box-sizing: border-box;
@@ -61,12 +64,12 @@ form input {
     width: 14rem;
     border-radius: 0.3rem;
     border: none;
-    border: 0.14rem solid #BBC4A6;
-    background-color: #BBC4A6;
+    border: 0.14rem solid #c0c0b7;
+    background-color: #c0c0b7;
     padding-left: 0.5rem;
 }
 form input:hover {
-    border: 0.14rem solid #818C71;
+    border: 0.14rem solid #494848;
 }
 form input:focus {
     outline: none;
@@ -81,7 +84,6 @@ div#signup-wrapper {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    /* background-color: #C8D0B4; */
     height: 100vh;
     border-radius: 0.25rem;
 }
@@ -92,4 +94,16 @@ a#signup-anchor {
     color: blue;
     text-decoration: underline;
     cursor: pointer;
+}
+svg#background {
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    /* fill: red; */
+    /* fill: linear-gradient(90deg, rgb(209, 7, 209),blue) */
+}
+svg#background-top {
+    position: absolute;
+    top: 0;
+    z-index: 3;
 }
