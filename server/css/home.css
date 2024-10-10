@@ -31,10 +31,37 @@ nav > a {
     height: 4vh;
     padding: 1.25rem;
     border-radius: 0.35rem;
+    cursor: pointer;
 }
 a:hover {
     background-color:  rgb(16, 22, 39);
-} 
+}
+
+#profile-view {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#account-popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    padding: 2rem;
+    outline: 0.15rem solid black;
+    border-radius: 0.5rem;
+    /* width: 50vw;
+    height: 50vh; */
+    background-color: #c0c0b7;
+}
+
+.account-info {
+    text-align: start;
+}
+
 #accounts-wrapper {
     display: flex;
     flex-direction: column;
@@ -189,7 +216,6 @@ div#checkings-withdraw-popup  {
     position: absolute;
     top: 0;
     display: none;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
@@ -228,11 +254,10 @@ label#checkings-deposit-exit {
 }
 
 input {
-    width: 15vw;
-    height: 5vh;
+    padding: 0.5rem;
     border-radius: 0.3rem;
-    border: 0.14rem solid #c0c0b7;
+    border: 0.14rem solid black;
     background-color: #c0c0b7;
-    padding-left: 0.5rem;
-    margin-bottom: 1rem;
+    /* padding-left: 0.5rem;
+    margin-bottom: 1rem; */
 }

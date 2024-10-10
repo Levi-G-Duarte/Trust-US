@@ -175,6 +175,33 @@ app.put('/auth/:authCode', async (req, res) => {
     }
 })
 
+app.put('/update/:authCode', async (req, res) => {
+    try {
+        const {authCode} = req.params;
+        const {firstname, lastname, email} = req.body;
+        let user = await fs.readFile(`${dataPath}/users.json`, 'utf-8');
+        user = JSON.parse(user);
+        const userIndex = user.findIndex(user => user.authCode === authCode);
+        if (userIndex != -1) {
+            let client = user[userIndex];
+            if (client.expiration > Math.floor(Date.now()/1000)) {
+                client.firstname = firstname;
+                client.lastname = lastname;
+                client.email = email;
+                await fs.writeFile(`${dataPath}/users.json`, JSON.stringify(user, null, 2));
+                res.status(200).send("Succesful!");
+            } else {
+                res.status(403).send("Forbidden, Authcode has expired");
+            }
+        } else {
+            res.status(400).send("Bad Request");
+        }
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send(error.message);
+    }
+})
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
