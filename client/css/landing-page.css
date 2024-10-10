@@ -1,12 +1,11 @@
 * {
-    transition: all 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
-
 body{
     background-color: #f1f1f1;
     text-align: center;
     background-repeat: no-repeat;
-    font-family: Cash Sans, Helvetica Neue, helvetica, sans-serif;     
+    font-family: Cash Sans, Helvetica Neue, helvetica, sans-serif;    
     margin:0;
     text-shadow: 2px;
 }
@@ -24,6 +23,7 @@ nav {
 
 #login-button:hover {
     animation:horizontal-shaking 0.65s ease-in-out 1;
+    box-shadow: 0px 0px 10px rgb(251, 6, 251);
     filter: invert(100%) hue-rotate(180deg);
 }
 
@@ -44,8 +44,7 @@ div#nav {
     margin-right: 1vh;
     margin-top: 1vh;
     color: #F1F1F1;
-    background: linear-gradient(90deg, rgb(209, 7, 209),blue)
-
+    background: linear-gradient(90deg, rgb(209, 7, 209),blue);
 }
 
 div#parent-container {
@@ -62,7 +61,7 @@ div#box1 {
     height: 20vh;
     justify-content: center;
     align-items: center;
-    
+   
 }
 
 h1.title {
@@ -77,6 +76,9 @@ div#body-content-container {
     display:flex;
     background-color: black;
     justify-content: space-evenly;
+    box-shadow: 0px 0px 20px rgb(251, 6, 251);
+}
+#body-content-container:hover {
 }
 
 div.body-content1 {
@@ -106,6 +108,15 @@ div#footer {
 ul {
     line-height: 2;
 }
+.body-content1 h1 {
+    border-bottom: 2px solid rgb(255, 1, 255);
+}
+#footer h1 {
+    border-bottom: 2px solid rgb(255, 1, 255);
+}
+#image-container {
+    height: 40vh;
+}
 
 .typing {
     border-right: 2px solid black;
@@ -125,4 +136,61 @@ ul {
     0% {border-color: transparent}
     50% {border-color: black}
     100% {border-color: transparent}
+}
+.example {
+    display:flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 50%;
+    margin: 2rem auto;
+   
+    > .block {
+        position: absolute;
+        height: 100%;
+        width: 30%;
+        perspective: 1000px;
+       
+        &:nth-of-type(1) {
+            height: 30%;
+            top: 0%;
+            left: 45%;
+            width: 15%;
+        }
+    }
+   
+    > .block > .side {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url('https://img.freepik.com/premium-vector/bitcoin-symbol-isolated-white-crypto-currency-golden-symbol-vector-illustration_166207-428.jpg');
+        background-size: auto 100%;
+        box-shadow: -1vw 5px 20px rgba(0, 0, 0, 0.7);
+       
+        &.-main {  
+            height: 100%;
+            width: 100%;
+            transform: rotateY(30deg);
+            transform-origin: 0 50%;
+        }
+       
+        &.-left {
+            height: 100%;
+            width: 20%;
+            transform-origin: 0 50%;
+            transform: rotateY(-60deg) translateX(-100%);
+            filter: brightness(50%);
+        }
+    }
+   
+    > .block:nth-of-type(1) > .side {
+        &.-main {
+            background-position: 4% 50%;
+            background-size: auto 100%;
+        }
+       
+        &.-left {
+            background-position: 0 50%;
+            background-size: auto 100%;
+        }
+    }
 }
