@@ -20,24 +20,21 @@
     </nav>
 <div id="accounts-wrapper">
     <h2>Bank Accounts</h2>
-    <div id="savings-wrapper">
+    <div class="account">
+        <!-- id="savings-wrapper" -->
         <p>Savings</p>
         <h1>$ <span id="savings-deposit-span">00</span></h1>
-        <div>
+        <div class="button-container">
             <button type="button" id="savings-withdraw" onclick="document.querySelector('#savings-withdraw-popup').style.display = 'flex'">Withdraw</button>
-        </div>
-        <div>
-            <button type="button" id="savings-deposit" onclick="document.querySelector('#savings-deposit-popup').style.display = 'flex'">Deposit</button>
+            <button type="button" id="savings-deposit">Deposit</button>
         </div>
     </div>
-    <div>
+    <div class="account">
         <p>Checking</p>
         <h1>$ <span id="checkings-deposit-span">00</span></h1>
-        <div>
-            <button type="button" id="checkings-withdraw" onclick="document.querySelector('#checkings-withdraw-popup').style.display = 'flex'">Withdraw</button>
-        </div>
-        <div>
-            <button type="button" id="checkings-deposit" onclick="document.querySelector('#checkings-deposit-popup').style.display = 'flex'">Deposit</button>
+        <div class="button-container">
+            <button type="button" id="checkings-withdraw">Withdraw</button>
+            <button type="button" id="checkings-deposit">Deposit</button>
         </div>
     </div>
 </div>
