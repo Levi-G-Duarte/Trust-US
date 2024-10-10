@@ -123,8 +123,8 @@ app.get('/auth/:authCode', async (req, res) => {
         if (userIndex != -1) {
             let client = user[userIndex];
             if (client.expiration > Math.floor(Date.now()/1000)) {
-                const {firstname, lastname, email, history} = client;
-                res.status(200).send(JSON.stringify({firstname, lastname, email, history}));
+                const {firstname, lastname, email, savings, checkings} = client;
+                res.status(200).send(JSON.stringify({firstname, lastname, email, savings, checkings}));
             } else {
                 res.status(403).send("Forbidden, Authcode has expired");
             }
@@ -157,9 +157,9 @@ app.put('/auth/:authCode', async (req, res) => {
                 let client = user[userIndex];
                 if (client.expiration > Math.floor(Date.now()/1000)) {
                     let balance = client[isSavings?"savings":"checkings"];
-                    balance.push(amount);
+                    balance.push(parseInt(amount));
                     fs.writeFile(`${dataPath}/users.json`, JSON.stringify(user, null, 2));
-                    res.status(200).send(JSON.stringify(client.history));
+                    res.status(200).send(JSON.stringify({savings: client.savings, checkings: client.checkings}));
                 } else {
                     res.status(403).send("Forbidden, Authcode has expired");
                 }
