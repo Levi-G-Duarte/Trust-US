@@ -10,17 +10,17 @@ html {
 }
 body{
     background-color: rgb(16, 22, 39);
-    text-align: center
+    text-align: center;
 }
  nav {
     background-color: black;
-    overflow: hidden;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: flex-start;
     height: 9vh;
     gap: 0.5rem;
+    padding: 1rem;
 }
 nav > a {
     text-decoration: none;
@@ -29,6 +29,8 @@ nav > a {
     justify-content: center;
     align-items: center;
     height: 4vh;
+    padding: 1.25rem;
+    border-radius: 0.35rem;
 }
 a:hover {
     background-color:  rgb(16, 22, 39);
@@ -40,6 +42,8 @@ a:hover {
 .account {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
 }
 .button-container {
     display: flex;
@@ -50,8 +54,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15%;
-    height: 4vh;
+    padding: 0.5rem;
 }
 div#accounts-wrapper {
     display: flex;
@@ -89,6 +92,20 @@ div button:hover {
     background-color: #8d8d8b;
 
 }
+
+div#transactions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+div.transactions-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 div#transaction-wrapper {
     display: flex;
     flex-direction: column;
@@ -99,7 +116,7 @@ div#transaction-wrapper {
 }
 div#transaction-wrapper > div#transactions {
     width: 50vw;
-    height: 20vh;
+    /* height: 20vh; */
     background-color: #c0c0b7;
     border-radius: 0.5rem;
 }
@@ -211,7 +228,6 @@ input {
     width: 15vw;
     height: 5vh;
     border-radius: 0.3rem;
-    border: none;
     border: 0.14rem solid #c0c0b7;
     background-color: #c0c0b7;
     padding-left: 0.5rem;

@@ -19,7 +19,7 @@
         <!-- <a href="/about">About</a> -->
     </nav>
 <div id="accounts-wrapper">
-    <h2>Bank Accounts <button onclick="updateBalance()">Refresh</button></h2>
+    <h2 style="display: flex;">Bank Accounts <button style="margin-left: 1rem;" onclick="updateBalance()">Refresh</button></h2>
     <div class="account">
         <!-- id="savings-wrapper" -->
         <p>Savings</p>
@@ -41,6 +41,12 @@
 <div id="transaction-wrapper">
     <h2>Transactions</h2>
     <div id="transactions">
+        <div class="transactions-child" id="transaction-checkings">
+            <h3>Checkings:</h3>
+        </div>
+        <div class="transactions-child" id="transaction-savings">
+            <h3>Savings:</h3>
+        </div>
     </div>
 </div>
 
@@ -96,8 +102,16 @@ async function updateBalance() {
     .then(data => {
         let savingsBalance = 0;
         let checkingBalance = 0;
-        data.savings.map(item => {savingsBalance += item});
-        data.checkings.map(item => {checkingBalance += item});
+        document.querySelector("#transaction-savings").innerHTML = "<h3>Savings:</h3>";
+        document.querySelector("#transaction-checkings").innerHTML = "<h3>Checkings:</h3>";
+        data.savings.map(item => {
+            savingsBalance += item
+            document.querySelector("#transaction-savings").innerHTML += `<p style="color: ${(item >= 0)?"lime":"red"};">${item}</p>`;
+        });
+        data.checkings.map(item => {
+            checkingBalance += item;
+            document.querySelector("#transaction-checkings").innerHTML += `<p style="color: ${(item >= 0)?"lime":"red"};">${item}</p>`;
+        });
         document.getElementById("checkings-deposit-span").innerHTML = checkingBalance;
         document.getElementById("savings-deposit-span").innerHTML = savingsBalance;
         console.log(savingsBalance);
