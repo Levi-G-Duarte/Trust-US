@@ -27,17 +27,17 @@
             <button type="button" id="savings-withdraw" onclick="document.querySelector('#savings-withdraw-popup').style.display = 'flex'">Withdraw</button>
         </div>
         <div>
-            <button type="button" id="savings-deposit">Deposit</button>
+            <button type="button" id="savings-deposit" onclick="document.querySelector('#savings-deposit-popup').style.display = 'flex'">Deposit</button>
         </div>
     </div>
     <div>
         <p>Checking</p>
         <h1>$ <span id="checkings-deposit-span">00</span></h1>
         <div>
-            <button type="button" id="checkings-withdraw">Withdraw</button>
+            <button type="button" id="checkings-withdraw" onclick="document.querySelector('#checkings-withdraw-popup').style.display = 'flex'">Withdraw</button>
         </div>
         <div>
-            <button type="button" id="checkings-deposit">Deposit</button>
+            <button type="button" id="checkings-deposit" onclick="document.querySelector('#checkings-deposit-popup').style.display = 'flex'">Deposit</button>
         </div>
     </div>
 </div>
@@ -50,37 +50,45 @@
 <div id="savings-withdraw-popup">
     <div id="savings-content">
         <label id="savings-withdraw-exit">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            <button onclick="document.querySelector('#savings-withdraw-popup').style.display = 'none'">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            </button>
         </label>
         <input type="text" id="savings-withdraw-amount" placeholder="Withdraw">
-        <button type="sumbit" id="savings-withdraw-button" onclick="document.querySelector('#savings-withdraw-popup').style.display = 'none'">Withdraw</button>
+        <button type="sumbit" id="savings-withdraw-button" onclick="changeBalance(document.querySelector('#savings-withdraw-amount').value*-1, true); updateBalance(); document.querySelector('#savings-withdraw-popup').style.display = 'none'">Withdraw</button>
     </div>
 </div>
 <div id="savings-deposit-popup">
     <div id="savings-content">
         <label id="savings-deposit-exit">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            <button onclick="document.querySelector('#savings-deposit-popup').style.display = 'none'">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            </button>
         </label>
         <input type="text" id="savings-deposit-amount" placeholder="Deposit">
-        <button type="sumbit" id="savings-deposit-button">Deposit</button>
+        <button type="sumbit" id="savings-deposit-button" onclick="changeBalance(document.querySelector('#savings-deposit-amount').value, true); updateBalance(); document.querySelector('#savings-deposit-popup').style.display = 'none'">Deposit</button>
     </div>
 </div>
 <div id="checkings-withdraw-popup">
     <div id="checkings-content">
         <label id="checkings-withdraw-exit">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            <button onclick="document.querySelector('#checkings-withdraw-popup').style.display = 'none'">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            </button>
         </label>
         <input type="text" id="checkings-withdraw-amount" placeholder="Withdraw">
-        <button type="submit" id="checkings-withdraw-button">Withdraw</button>
+        <button type="submit" id="checkings-withdraw-button" onclick="changeBalance(document.querySelector('#checkings-withdraw-amount').value*-1, false); updateBalance(); document.querySelector('#checkings-withdraw-popup').style.display = 'none'">Withdraw</button>
     </div>
 </div>
 <div id="checkings-deposit-popup">
     <div id="checkings-content">
         <label id="checkings-deposit-exit">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            <button onclick="document.querySelector('#checkings-deposit-popup').style.display = 'none'">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            </button>
         </label>
         <input type="text" id="checkings-deposit-amount" placeholder="Deposit">
-        <button type="submit" id="checkings-deposit-button">Deposit</button>
+        <button type="submit" id="checkings-deposit-button" onclick="changeBalance(document.querySelector('#checkings-deposit-amount').value, false); updateBalance(); document.querySelector('#checkings-deposit-popup').style.display = 'none'">Deposit</button>
     </div>
 </div>
 
@@ -96,48 +104,36 @@
 <!-- </div> -->
 <script>
 // Fetch for Session Storage Data
-let user_data = {};
-fetch(`auth/${sessionStorage.authCode}`)
-.then(data => data.json())
-.then(data => {
-    user_data = data;
-    console.log(data);
-    updateBalance();
-    // atob(data.firstname) 
-    // atob(data.lastname)
-    // atob(data.email)
-}).catch(error => {
-    sessionStorage.clear();
-    window.location.href = "/login";
-});
-
 async function updateBalance() {
-    let savingsBalance = 0;
-    let checkingBalance = 0;
-    user_data.history.map(item => {
-        if (item > 0) {
-            let percent = 0.05;
-            let savings = item * percent;
-            savingsBalance += savings;
-            checkingBalance += item-savings;
-        } else {
-            savingsBalance += 0;
-            checkingBalance += item;
-        }
+    fetch(`auth/${sessionStorage.authCode}`)
+    .then(data => data.json())
+    .then(data => {
+        let savingsBalance = 0;
+        let checkingBalance = 0;
+        data.savings.map(item => {savingsBalance += item});
+        data.checkings.map(item => {checkingBalance += item});
+        document.getElementById("checkings-deposit-span").innerHTML = checkingBalance;
+        document.getElementById("savings-deposit-span").innerHTML = savingsBalance;
+        console.log(savingsBalance);
+        console.log(checkingBalance);
+        // atob(data.firstname) 
+        // atob(data.lastname)
+        // atob(data.email)
+    }).catch(error => {
+        sessionStorage.clear();
+        window.location.href = "/login";
     });
-    document.getElementById("checkings-deposit-span").innerHTML = checkingBalance;
-    document.getElementById("savings-deposit-span").innerHTML = savingsBalance;
-    console.log(savingsBalance);
-    console.log(checkingBalance);
 }
+updateBalance();
 
 // Changing balance request
-// let request = await fetch(`auth/${sessionStorage.authCode}`, {
-//     method: "PUT",
-//     headers: {"Content-Type": "application/json"},
-//     body: JSON.stringify({amount: -100})
-// });
-// data = await request.json();
+function changeBalance(amount, isSavings) {
+    fetch(`auth/${sessionStorage.authCode}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({amount, isSavings})
+    });
+}
 
 // Logout onClick
 document.getElementById("logout-button").addEventListener("click", function(){
