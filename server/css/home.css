@@ -205,3 +205,13 @@ input {
     padding-left: 0.5rem;
     margin-bottom: 1rem;
 }
+/* div#profile-view-popup {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+} */
