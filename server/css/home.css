@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    transition: all 0.25s ease-in-out;
 }
 html {
     font-family: "Catamaran", sans-serif;
@@ -23,7 +25,6 @@ body{
 nav > a {
     text-decoration: none;
     color: white;
-    /* background-Color: #636F57; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,6 +33,26 @@ nav > a {
 a:hover {
     background-color:  #818C71;
 } 
+#accounts-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.account {
+    display: flex;
+    flex-direction: column;
+}
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 4vh;
+}
 div#accounts-wrapper {
     display: flex;
     flex-direction: column;
@@ -48,22 +69,15 @@ div#accounts-wrapper > div {
     height: 20vh;
     border-radius: 0.5rem;
     flex-wrap: wrap;
-    /* box-sizing: border-box; */
 }
 div#accounts-wrapper * {
     flex-wrap: wrap;
     box-sizing: border-box;
 }
 div#accounts-wrapper > div > div {
-    /* position: absolute; */
-    /* bottom: 0; */
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    /* padding: 0.5rem 0 0.5rem 2.5rem; */
-    /* padding-left: 0.5rem; */
-    /* gap: 2rem; */
-    /* flex-direction: row-reverse; */
 }
 div button {
     background-color: #818C71;
@@ -92,6 +106,8 @@ div#transaction-wrapper > div#transactions {
  p {
     font-size: 25px;
     color: rgb(49, 49, 49);
+    display: flex;
+    justify-content: start;
 }
 h1 {
     color: #45513D;
@@ -99,13 +115,6 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-  button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4.5vw;
-    height: 4vh;
 }
 div#savings-withdraw-popup {
     background: rgba(0, 0, 0, 0.6);
