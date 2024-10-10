@@ -19,7 +19,9 @@
 
         <div id="box1">
             <h1 class="title" id="title"></h1>
+            <h2 class="title" id="title2" style="opacity: 0;">Banking Done Right</h2>
             <script>
+                let title2 = document.getElementById("title2");
                 let title = document.getElementById("title");
                 let text = "TrustUS";
                 let index = 0;
@@ -31,15 +33,16 @@
                         clearInterval(loop);
                     }
                 }, 1000/text.length);
-                setTimeout(()=>{title.classList.remove("typing")}, 1000);
+                setTimeout(()=>{
+                    title.classList.remove("typing");
+                    title2.style.opacity = "1"
+
+                }, 1000);
             </script>
         </div>
     </div>
     <div id="image-container">
-        <div class="example">
-  <div class="block">
-    <div class="side -main"></div>
-    <div class="side -left"></div>
+        
   </div>
 </div>
     </div>
@@ -85,6 +88,19 @@
                 <li><b>Contact Us:</b> Have questions? Reach out to our customer support team 24/7.</li>
                
             </ul>
+            <div class="cat">
+                <div class="ear ear--left"></div>
+                <div class="ear ear--right"></div>
+                <div class="face">
+                    <div class="eye eye--left">
+                        <div class="eye-pupil"></div>
+                    </div>
+                    <div class="eye eye--right">
+                        <div class="eye-pupil"></div>
+                    </div>
+                    <div class="muzzle"></div>
+                </div>
+            </div>
     </div>
 <script>
     function login() {
