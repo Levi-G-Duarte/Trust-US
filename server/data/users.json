@@ -1,3 +1,27 @@
 [
-  
+  {
+    "firstname": "RnJlYWt5",
+    "lastname": "Qm9iYnk=",
+    "email": "YUBhLmNvbQ==",
+    "password": "MTIzI1Rlc3Q=",
+    "savings": [
+      100,
+      -8
+    ],
+    "checkings": [
+      1000,
+      -5,
+      -1000000
+    ],
+    "authCode": "74595e7e-7d53-4994-a1ff-6c56ac4d838d",
+    "expiration": 1728596039
+  },
+  {
+    "firstname": "ZQ==",
+    "lastname": "YQ==",
+    "email": "YkBiLmNvbQ==",
+    "password": "MTIzI1Rlc3Q=",
+    "savings": [],
+    "checkings": []
+  }
 ]

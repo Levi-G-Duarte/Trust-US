@@ -35,6 +35,7 @@
                 <input required type="email" name="email" id="login-email-input" placeholder="Email">
                 <label for="signup-password-input">Password</label>
                 <input required type="password" name="password" id="login-password-input" placeholder="Password">
+                <h3 style="color: white; padding-top: 1rem;" id="login-debug"></h3>
             <div class="button-wrapper">
                 <button type="sumbit">Login</button>
             </div>
@@ -84,7 +85,8 @@
             body: JSON.stringify(data)
         });
         let result = await req.text();
-        if (result != null) {
+        document.getElementById("login-debug").innerHTML = result;
+        if (req.ok) {
             sessionStorage.setItem('authCode', result);
             window.location.href = "/home";
         }
