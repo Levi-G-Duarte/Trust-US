@@ -19,7 +19,7 @@
         <!-- <a href="/about">About</a> -->
     </nav>
 <div id="accounts-wrapper">
-    <h2>Bank Accounts</h2>
+    <h2>Bank Accounts <button onclick="updateBalance()">Refresh</button></h2>
     <div class="account">
         <!-- id="savings-wrapper" -->
         <p>Savings</p>
@@ -43,9 +43,7 @@
     <div id="transactions">
     </div>
 </div>
-<script>
-    
-</script>
+
 <div id="savings-withdraw-popup">
     <div id="savings-content">
         <label id="savings-withdraw-exit">
@@ -76,7 +74,7 @@
             </button>
         </label>
         <input type="text" id="checkings-withdraw-amount" placeholder="Withdraw">
-        <button type="submit" id="checkings-withdraw-button" onclick="changeBalance(document.querySelector('#checkings-withdraw-amount').value*-1, false); updateBalance(); document.querySelector('#checkings-withdraw-popup').style.display = 'none'}">Withdraw</button>
+        <button type="submit" id="checkings-withdraw-button" onclick="changeBalance(document.querySelector('#checkings-withdraw-amount').value*-1, false); updateBalance(); document.querySelector('#checkings-withdraw-popup').style.display = 'none'">Withdraw</button>
     </div>
 </div>
 <div id="checkings-deposit-popup">
@@ -87,7 +85,7 @@
             </button>
         </label>
         <input type="text" id="checkings-deposit-amount" placeholder="Deposit">
-        <button type="submit" id="checkings-deposit-button" onclick="changeBalance(document.querySelector('#checkings-deposit-amount').value, false); updateBalance(); document.querySelector('#checkings-deposit-popup').style.display = 'none'}">Deposit</button>
+        <button type="submit" id="checkings-deposit-button" onclick="changeBalance(document.querySelector('#checkings-deposit-amount').value, false); updateBalance(); document.querySelector('#checkings-deposit-popup').style.display = 'none'">Deposit</button>
     </div>
 </div>
 <script>
@@ -108,9 +106,9 @@ async function updateBalance() {
         // atob(data.lastname)
         // atob(data.email)
     }).catch(error => {
-        console.log(error.message);
-        // sessionStorage.clear();
-        // window.location.href = "/login";
+        alert(error.message);
+        sessionStorage.clear();
+        window.location.href = "/login";
     });
 }
 updateBalance();
