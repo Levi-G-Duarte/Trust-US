@@ -9,11 +9,11 @@ html {
     font-size: 1rem;
 }
 body{
-    background-color: #ecf1df;
+    background-color: rgb(16, 22, 39);
     text-align: center
 }
  nav {
-    background-color: #45513D;
+    background-color: black;
     overflow: hidden;
     display: flex;
     flex-direction: row-reverse;
@@ -24,14 +24,14 @@ body{
 }
 nav > a {
     text-decoration: none;
-    color: white;
+    color: #c0c0b7;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 4vh;
 }
 a:hover {
-    background-color:  #818C71;
+    background-color:  rgb(16, 22, 39);
 } 
 #accounts-wrapper {
     display: flex;
@@ -64,7 +64,7 @@ div#accounts-wrapper {
 }
 div#accounts-wrapper > div {
     display: flex;
-    background-color: #BBC4A6;
+    background-color: #c0c0b7;
     width: 35vw;
     height: 20vh;
     border-radius: 0.5rem;
@@ -80,13 +80,13 @@ div#accounts-wrapper > div > div {
     justify-content: flex-end;
 }
 div button {
-    background-color: #818C71;
+    background-color: #9c9c99;
     border-radius: 0.25rem;
     transition: 150ms ease;
     border: none;
 }
 div button:hover {
-    background-color: #636F57;
+    background-color: #8d8d8b;
 
 }
 div#transaction-wrapper {
@@ -100,21 +100,24 @@ div#transaction-wrapper {
 div#transaction-wrapper > div#transactions {
     width: 50vw;
     height: 20vh;
-    background-color: #BBC4A6;
+    background-color: #c0c0b7;
     border-radius: 0.5rem;
 }
  p {
     font-size: 25px;
-    color: rgb(49, 49, 49);
+    color: black;
     display: flex;
     justify-content: start;
 }
 h1 {
-    color: #45513D;
+    color: black;
     font-size: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+h2 {
+    color: #c0c0b7;
 }
 div#savings-withdraw-popup {
     background: rgba(0, 0, 0, 0.6);
@@ -143,7 +146,7 @@ div#savings-content {
     justify-content: center;
     height: 35vh;
     width: 30vw;
-    background-color: #ecf1df;
+    background-color: #c0c0b7;
     border-radius: 0.5rem;
     position: relative;
 }
@@ -187,7 +190,7 @@ div#checkings-content {
     justify-content: center;
     height: 35vh;
     width: 30vw;
-    background-color: #ecf1df;
+    background-color: #c0c0b7;
     border-radius: 0.5rem;
     position: relative;
 }
@@ -209,8 +212,8 @@ input {
     height: 5vh;
     border-radius: 0.3rem;
     border: none;
-    border: 0.14rem solid #BBC4A6;
-    background-color: #BBC4A6;
+    border: 0.14rem solid #c0c0b7;
+    background-color: #c0c0b7;
     padding-left: 0.5rem;
     margin-bottom: 1rem;
 }
