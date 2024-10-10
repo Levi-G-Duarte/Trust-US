@@ -31,18 +31,10 @@
       <div id="login-wrapper">
         <h1>Login</h1>
         <form id="login-form">
-            <div>
                 <label for="signup-email-input">Email</label>
-            </div>
-            <div> 
                 <input required type="email" name="email" id="login-email-input" placeholder="Email">
-            </div>
-            <div>
                 <label for="signup-password-input">Password</label>
-            </div>
-            <div> 
                 <input required type="password" name="password" id="login-password-input" placeholder="Password">
-            </div>
             <div class="button-wrapper">
                 <button type="sumbit">Login</button>
             </div>
@@ -52,41 +44,21 @@
     <div id="signup-wrapper">
         <h1>Signup</h1>
         <form id="signup-form">
-            <div>
                 <label for="firstname-input">First Name</label>
-            </div>
-            <div> 
                 <input required type="text" name="firstname" id="firstname-input" placeholder="First Name">
-            </div>
-            <div>
                 <label for="lastname-input">Last Name</label>
-            </div>
-            <div> 
                 <input required type="text" name="lastname" id="lastname-input" placeholder="Last Name">
-            </div>
-            <div>
                 <label for="signup-email-input">Email</label>
-            </div>
-            <div> 
                 <input required type="email" name="email" id="signup-email-input" placeholder="Email">
-            </div>
-            <div>
                 <label for="signup-password-input">Password</label>
-            </div>
-            <div> 
                 <input required type="password" name="password" id="signup-password-input" pattern="^(?=.*[A-Z])(?=.*[\W_]).{8,}$"title="Password must be at least 8 characters long, contain at least one uppercase letter, and one special character." placeholder="Password">
-            </div>
-            <div>
                 <label for="repeat-password-input">Repeat Password</label>
-            </div>
-            <div> 
                 <input required type="password" name="repeat-password" id="repeat-password-input" placeholder="Repeat Password">
-            </div>
             <div class="button-wrapper">
             <button type="sumbit">Create Account</button>
             </div>
         </form>
-        <p>Already have an account? <a href="/login">Login</a></p>
+        <p>Already have an account? <a href="/login" id="login-anchor">Login</a></p>
     </div>
 </body>
 <script>
@@ -135,6 +107,5 @@
     });
     await req.text();
     })
-
 </script>
 </html>

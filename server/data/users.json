@@ -1,2 +1,21 @@
 [
+  {
+    "firstname": "ZG9n",
+    "lastname": "ZG9nZ3k=",
+    "email": "ZG9nQGVtYWlsLmNvbQ==",
+    "password": "SGVscE1lMTIzNC0=",
+    "savings": [
+      -100,
+      -100,
+      100,
+      100,
+      300,
+      300,
+      -200,
+      -200
+    ],
+    "checkings": [],
+    "authCode": "cbba0ff1-5dcd-4b85-852e-974d6484511e",
+    "expiration": 1728551858
+  }
 ]

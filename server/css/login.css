@@ -76,7 +76,7 @@ form input:hover {
 }
 form input:focus {
     outline: none;
-    background-color: #AEB898;
+    background-color: #9c9c99;
 }
 form input::placeholder {
     color: #45513D;
@@ -97,6 +97,9 @@ a#signup-anchor {
     color: blue;
     text-decoration: underline;
     cursor: pointer;
+}
+a#login-anchor {
+    color: blue;
 }
 svg#background {
     position: absolute;
